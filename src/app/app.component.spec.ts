@@ -1,15 +1,18 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { BookListComponent } from "./book-list/book-list.component";
+import { BookEntryFormComponent } from "./book-entry-form/book-entry-form.component";
+import { AppModule } from './app.module';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        AppModule
       ],
       declarations: [
-        AppComponent
       ],
     }).compileComponents();
   }));
@@ -20,16 +23,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'book-library'`, () => {
+  it(`should have as title 'Book Library'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('book-library');
+    expect(app.title).toEqual('Book Library');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('book-library app is running!');
+    expect(compiled.querySelector('.header').textContent).toContain('Book Library');
   });
 });

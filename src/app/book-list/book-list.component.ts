@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from 'src/app/books'
+import { BOOKS } from 'src/app/sample-books';
+import { BookService } from "./book.service";
+import { Book } from '../books';
 
 @Component({
   selector: 'app-book-list',
@@ -7,10 +9,11 @@ import { Book } from 'src/app/books'
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-  books = [new Book(1, "Treasure Island", "Robert Lewis Stevenson")];
-  firstBookEntry = this.books[0];
-  rating = "Good";
-  constructor() { }
+  books: Book[];
+
+  constructor(bookService: BookService) {
+    this.books = bookService.getBooks();
+   }
 
   ngOnInit() {
   }

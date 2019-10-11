@@ -9,6 +9,6 @@ import { BookListComponent } from "./book-list/book-list.component";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'book-library';
+  title = 'Book Library';
   books = Book;
 }
