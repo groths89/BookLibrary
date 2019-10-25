@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { BOOKS } from 'src/app/sample-books';
-import { BookService } from "./book.service";
+import { BookService } from './book.service';
 import { Book } from '../books';
 
 @Component({

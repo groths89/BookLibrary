@@ -3,35 +3,26 @@
         <div>
             <label>
                 ID:
-            </label>    
-                <input type="text" class="form-control" id="id"
-                        required
-                        [(ngModel)]="book.id" [ngModelOptions]="{standalone: true}" #id="ngModel">
-            <div [hidden]="id.valid || id.pristine" class="alert alert-danger">Name is required</div>
+            </label>
+                <input type="text" [formControl]="formID" class="form-control" id="formID" required >
         </div>
         <div>
             <label>
                 Title:
-            </label>    
-                <input type="text" class="form-control" id="bookTitle"
-                        required
-                        [(ngModel)]="book.title" [ngModelOptions]="{standalone: true}" #bookTitle="ngModel">
-            <div [hidden]="bookTitle.valid || bookTitle.pristine" class="alert alert-danger">Name is required</div>
+            </label>
+                <input type="text" [formControl]="formTITLE" class="form-control" id="bookTitle" required >
         </div>
         <div>
             <label>
                 Author:
-            </label>            
-                <input type="text" class="form-control" id="bookAuthor"
-                        required
-                        [(ngModel)]="book.author" [ngModelOptions]="{standalone: true}" #bookAuthor="ngModel">
-            <div [hidden]="bookAuthor.valid || bookAuthor.pristine" class="alert alert-danger">Name is required</div>
+            </label>
+                <input type="text" [formControl]="formAUTHOR" class="form-control" id="bookAuthor" required >
         </div>
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button [disabled]='!bookForm.invalid' type="submit" class="btn btn-success" name="submit">Submit</button>
         {{ submitted }}
     </form>
 </div>
 
 <p>
-    
+
 </p>
