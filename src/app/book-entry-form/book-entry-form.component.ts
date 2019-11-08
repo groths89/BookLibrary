@@ -1,7 +1,6 @@
-import { Component, OnInit, Injectable, Input, forwardRef } from '@angular/core';
-import { FormGroup, FormControl, NG_VALUE_ACCESSOR, AbstractControl } from '@angular/forms';
-import { ControlValueAccessor } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit, Injectable, Input, Inject } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 import { Book } from 'src/app/books';
 import { DatabaseService } from '../database.service';
@@ -11,18 +10,16 @@ import { DatabaseService } from '../database.service';
   selector: 'app-book-entry-form',
   templateUrl: './book-entry-form.component.html',
   styleUrls: ['./book-entry-form.component.css'],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      multi: true,
-      useExisting: forwardRef(() => BookEntryFormComponent),
-    }
-  ]
 })
 export class BookEntryFormComponent implements OnInit {
-  formID = new FormControl('');
-  formTITLE = new FormControl('');
-  formAUTHOR = new FormControl('');
+  newBook = 'No Content';
+  bookForm = new FormGroup({
+    id: new FormControl('', Validators.required),
+    author: new FormControl('', Validators.required),
+    title: new FormControl('', Validators.required),
+  });
+  description: string;
+
   id: number;
   bookTitle: string;
   bookAuthor: string;
@@ -32,16 +29,16 @@ export class BookEntryFormComponent implements OnInit {
     title: this.bookTitle,
     author: this.bookAuthor
   };
-  submitted = false;
+  submit = false;
   onSubmit() {
-    this.submitted = true;
+    this.submit = true;
+    console.log(this.bookForm.controls.id.value);
+    console.log(this.bookForm.controls.title.value);
+    console.log(this.bookForm.controls.author.value);
     console.log('Book Saved');
-    console.log(this.book);
   }
-/*
-  constructor(private DatabaseService: DatabaseService) {
 
-  } */
+  constructor() { }
 
   ngOnInit() {
 

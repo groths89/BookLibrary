@@ -1,6 +1,7 @@
-export class Book{
+export class Book {
     constructor(
         public id: number,
-        public bookTitle: String,
-        public bookAuthor: String){}
+        public bookTitle: string,
+        public bookAuthor: string,
+        public bookImage: string) {}
 }

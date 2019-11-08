@@ -1,8 +1,8 @@
-<app-book-entry-form></app-book-entry-form>
 <div class="row">
     <div class="col book-item" *ngFor="let book of books">
+        <img width="270px" height="406px" src='{{ book.bookImage }}' />
         <h1>{{ book.bookTitle }}</h1>
-        <p>{{ book.bookAuthor }}</p>  
+        <p>{{ book.bookAuthor }}</p>
     </div>
 </div>
 

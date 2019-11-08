@@ -1,28 +1,32 @@
-<div class="form-container">
-    <form #bookForm="ngForm" (ngSubmit)="onSubmit()">
+    <h2>Add Book to My Library</h2>
+    <mat-dialog-content [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+      <div>
+      <label>
+        ID:
+      </label>
+        <mat-form-field>
+          <input matInput type="text" class="form-control" formControlName="id">
+        </mat-form-field>
+      </div>
         <div>
             <label>
-                ID:
+              Title:
             </label>
-                <input type="text" [formControl]="formID" class="form-control" id="formID" required >
+              <mat-form-field>
+                <input matInput type="text" class="form-control" formControlName="title">
+              </mat-form-field>
         </div>
         <div>
             <label>
-                Title:
+              Author:
             </label>
-                <input type="text" [formControl]="formTITLE" class="form-control" id="bookTitle" required >
+              <mat-form-field>
+                <input matInput type="text" class="form-control" formControlName="author">
+              </mat-form-field>
         </div>
-        <div>
-            <label>
-                Author:
-            </label>
-                <input type="text" [formControl]="formAUTHOR" class="form-control" id="bookAuthor" required >
-        </div>
-        <button [disabled]='!bookForm.invalid' type="submit" class="btn btn-success" name="submit">Submit</button>
-        {{ submitted }}
-    </form>
-</div>
 
-<p>
-
-</p>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button type="submit" [disabled]="!bookForm.valid" class="btn btn-success" name="submit" (click)="save()">Submit</button>
+      <button type="submit" class="btn" name="cancel" (click)="close()">Cancel</button>
+    </mat-dialog-actions>
