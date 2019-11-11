@@ -30,6 +30,7 @@ export class BookEntryFormComponent implements OnInit {
     author: this.bookAuthor
   };
   submit = false;
+
   onSubmit() {
     this.submit = true;
     console.log(this.bookForm.controls.id.value);
@@ -38,8 +39,13 @@ export class BookEntryFormComponent implements OnInit {
     console.log('Book Saved');
   }
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<BookEntryFormComponent>) { }
+  save() {
 
+  }
+  closeDialog() {
+    this.dialogRef.close();
+  }
   ngOnInit() {
 
   }
