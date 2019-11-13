@@ -9,13 +9,14 @@ import { Book } from '../books';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-  books: Book[];
+  public books: Book[];
 
   constructor(bookService: BookService) {
     this.books = bookService.getBooks();
    }
 
   ngOnInit() {
+
   }
 
 }

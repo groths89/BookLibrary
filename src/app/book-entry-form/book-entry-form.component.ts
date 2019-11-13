@@ -41,7 +41,7 @@ export class BookEntryFormComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<BookEntryFormComponent>) { }
   save() {
-
+    this.dialogRef.close(this.bookForm.value);
   }
   closeDialog() {
     this.dialogRef.close();

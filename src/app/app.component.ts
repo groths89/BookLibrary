@@ -29,8 +29,11 @@ export class AppComponent {
 
     this.dialog.open(BookEntryFormComponent, dialogConfig);
 
-  }
-  close() {
-    this.dialog.closeAll();
+    const dialogRef = this.dialog.open(BookEntryFormComponent, dialogConfig);
+
+
+    dialogRef.afterClosed().subscribe(
+      data => console.log('Data Output:', data),
+    );
   }
 }
