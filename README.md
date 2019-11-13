@@ -1,6 +1,14 @@
-# BookLibrary
+# Book Library Application
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
+
+## Display List of Books
+
+Gets a list of books from an object
+
+## Add Books to List
+
+Using the Angular Material Dialog, the dialog has the form to add books to the list. On the dialog we can exit the dialog with the Cancel button or save the form data into an object with the Save button on the dialog.
 
 ## Development server
 
@@ -12,7 +20,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build. For GitHub pages the build artifacts are stored in the `docs/` directory, replace `dist` with `docs`.
 
 ## Running unit tests
 
@@ -22,6 +30,8 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+# TODO
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Online E-Reader for Book
+
+## Routing for Book Details
