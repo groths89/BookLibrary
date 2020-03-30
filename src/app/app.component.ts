@@ -13,7 +13,6 @@ import { BookEntryFormComponent } from './book-entry-form/book-entry-form.compon
 })
 export class AppComponent {
 
-  title = 'Book Library';
   books = Book;
 
   constructor(private dialog: MatDialog) {}

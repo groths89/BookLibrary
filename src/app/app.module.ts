@@ -8,6 +8,8 @@ import { MatInputModule, MatDialogModule, MatDialogRef } from '@angular/material
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppHeaderComponent } from './app-header/app-header.component';
+import { AppNavigationComponent } from './app-navigation/app-navigation.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookEntryFormComponent } from './book-entry-form/book-entry-form.component';
 import { DatabaseService } from './database.service';
@@ -19,6 +21,8 @@ import { BookReaderComponent } from './book-reader/book-reader.component';
 @NgModule({
   declarations: [
     AppComponent,
+    AppHeaderComponent,
+    AppNavigationComponent,
     BookListComponent,
     BookEntryFormComponent,
     BookDetailsComponent,

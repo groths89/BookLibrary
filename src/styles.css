@@ -1,25 +1,34 @@
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif }
 
 .header{
-  background: #000000;
+  background: linear-gradient(-90deg, #adeef3, #2dcbd6);
   color: #FFFFFF;
-  min-height: 70px;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
 }
 .nav{
-  margin: 0 auto;
-  width: 61%;
-  padding: 0 15px;
-  text-transform: uppercase;
+  margin: 0 0;
+  width: 100%;
 }
 
-.nav img{
-  background-color: white;
+.header #title{
+  float: left;
+  margin: 0.1em 0.6em;
+  grid-column: 0 1;
+  font-size: 21pt;
+  font-weight: 200;
+}
+.header img{
   border: 2px solid inset #000000;
-  padding: 5px;
-  margin: 5px;
-  width: 6em;
-  height: 6em;
+  width: 50px;
+  height: 50px;
+  float: right;
+  margin: 0 1em 0 3.5em;
+  grid-column: 0 1;
 }
 .nav button{
   float: right;
@@ -30,4 +39,118 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .nav button:hover{
   background-color: #707070;
   color: #FFFFFF;
+}
+.nav nav.user-display{
+  display: block;
+  float: none;
+  padding: 0 0 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  border-bottom: 1px solid #323232;
+  position: relative;
+  background: #404040;
+  position: relative;
+  z-index: 2;
+}
+.nav nav.first{
+  display: block;
+  float: none;
+  padding: 0 0 10px;
+  margin-top: 0;
+  margin-bottom: 7px;
+  width: 100%;
+  border-bottom: 1px solid #323232;
+  position: relative;
+  background: #404040;
+  position: relative;
+  z-index: 2;
+}
+.nav nav{
+  display: block;
+  float: none;
+  padding: 0 0 10px;
+  margin-top: 10px;
+  margin-bottom: 7px;
+  width: 100%;
+  border-bottom: 1px solid #323232;
+  position: relative;
+  background: #404040;
+  position: relative;
+  z-index: 2;
+}
+
+.sidebar{
+  background: #424242;
+  height: 100%;
+  width: 220px;
+  position: fixed;
+}
+nav{
+  width: 100%;
+  color: #FFFFFF;
+}
+nav ul{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+nav ul li{
+  float: none;
+  display: block;
+  width: 100%;
+  margin-left: 0;
+  box-sizing: border-box;
+}
+nav ul li a{
+  display: block;
+  width: 100%;
+  text-transform: none;
+  font-size: 12px;
+  border-bottom: 0;
+  padding: 12px 0;
+  margin: auto;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+  color: #fff;
+  font-weight: 400;
+  cursor: pointer;
+  text-indent: 55px;
+  outline: 0;
+}
+.nav .user-display{
+  padding: 0 0 0;
+  margin-bottom: 0;
+  min-height: 57px;
+}
+.nav .user-display span{
+  position: relative;
+  bottom: -20px;
+  left: -20px;
+}
+.user-display ul li{
+  color: #FFFFFF;
+  list-style: none;
+  text-transform: uppercase;
+}
+.user-display ul li:hover{
+  background: none;
+}
+.first ul li{
+  color: #FFFFFF;
+  list-style: none;
+}
+.first ul li a{
+  color: #FFFFFF;
+  padding: 12px 0;
+  text-indent: 55px;
+}
+nav ul li:hover, nav ul li:active{
+  background: #242424;
+  color: #FFFFFF;
+}
+a:hover{
+  color: #FFFFFF;
+  cursor: pointer;
+  text-decoration: none;
 }
